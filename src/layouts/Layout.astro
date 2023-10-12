@@ -1,4 +1,6 @@
 ---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 interface Props {
   title: string;
 }
@@ -12,11 +14,23 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content="Pizzas à emporter et livraison de pizzas sur Capbreton et Hossegor."
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
+  <body class="relative bg-slate-50 max-w-4xl mx-auto">
+    <Header />
+    <div
+      class="container text-sm p-3 mx-auto md:text-base text-left sm:text-sm"
+    >
+      <slot />
+    </div>
+    <Footer />
   </body>
 </html>
