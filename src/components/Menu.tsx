@@ -121,7 +121,7 @@ export default () => {
     return (
       <ul className="flex flex-col pb-3">
         {pizzas.map((pizza) => (
-          <li className="flex flex-row mt-3 items-end shadow bg-slate-200">
+          <li className="flex flex-row mt-3 items-end border-b-2">
             <div className="flex-1 p-3">
               <strong className="font-bold uppercase">{pizza.name}</strong>
               <p className="font-light">{pizza.recipe}</p>
@@ -129,6 +129,7 @@ export default () => {
             <div className="p-3">
               <strong className="font-mono">{pizza.price} €</strong>
             </div>
+            <div className="divide-x-0" />
           </li>
         ))}
       </ul>
