@@ -12,6 +12,8 @@
   "dependencies": {
     "@astrojs/react": "^3.0.3",
     "@astrojs/tailwind": "^5.0.1",
+    "@fontsource/rochester": "^5.0.15",
+    "@fontsource/twinkle-star": "^5.0.15",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "astro": "^3.2.3",

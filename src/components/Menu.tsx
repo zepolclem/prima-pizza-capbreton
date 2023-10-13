@@ -123,8 +123,10 @@ export default () => {
         {pizzas.map((pizza) => (
           <li className="flex flex-row mt-3 items-end border-b-2">
             <div className="flex-1 p-3">
-              <strong className="font-bold uppercase">{pizza.name}</strong>
-              <p className="font-light">{pizza.recipe}</p>
+              <strong className="font-bold uppercase bg-slate-200 p-1 rounded">
+                {pizza.name}
+              </strong>
+              <p className="font-light pt-2">{pizza.recipe}</p>
             </div>
             <div className="p-3">
               <strong className="font-mono">{pizza.price} €</strong>

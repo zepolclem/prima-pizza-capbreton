@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@astrojs/react':
     specifier: ^3.0.3
@@ -11,6 +7,12 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.1
     version: 5.0.1(astro@3.2.3)(tailwindcss@3.3.3)
+  '@fontsource/rochester':
+    specifier: ^5.0.15
+    version: 5.0.15
+  '@fontsource/twinkle-star':
+    specifier: ^5.0.15
+    version: 5.0.15
   '@types/react':
     specifier: ^18.0.21
     version: 18.2.27
@@ -776,6 +778,14 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/rochester@5.0.15:
+    resolution: {integrity: sha512-GUOgMSCI7T5fgtx5lsTysGsnoTjd2hiaGOzsFkxzTHUQXseyNyS+dRVW+favcOOsV3CywWsHSKVTcUFFbbugGg==}
+    dev: false
+
+  /@fontsource/twinkle-star@5.0.15:
+    resolution: {integrity: sha512-R6MzK1wL4uUy4NQ2ufxtrt9ku/7bjL77EkE6tqS+Rh0rXgraQ8HXutYBKv54cxouPK5HzQxmX3D0ICySJ9s5cg==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
@@ -3864,3 +3874,7 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: false
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
