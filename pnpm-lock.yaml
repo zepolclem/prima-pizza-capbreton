@@ -7,18 +7,15 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.1
     version: 5.0.1(astro@3.2.3)(tailwindcss@3.3.3)
-  '@fontsource/rochester':
-    specifier: ^5.0.15
-    version: 5.0.15
-  '@fontsource/twinkle-star':
-    specifier: ^5.0.15
-    version: 5.0.15
   '@types/react':
     specifier: ^18.0.21
     version: 18.2.27
   '@types/react-dom':
     specifier: ^18.0.6
     version: 18.2.12
+  '@vercel/analytics':
+    specifier: ^1.1.1
+    version: 1.1.1
   astro:
     specifier: ^3.2.3
     version: 3.2.3
@@ -779,14 +776,6 @@ packages:
     dev: false
     optional: true
 
-  /@fontsource/rochester@5.0.15:
-    resolution: {integrity: sha512-GUOgMSCI7T5fgtx5lsTysGsnoTjd2hiaGOzsFkxzTHUQXseyNyS+dRVW+favcOOsV3CywWsHSKVTcUFFbbugGg==}
-    dev: false
-
-  /@fontsource/twinkle-star@5.0.15:
-    resolution: {integrity: sha512-R6MzK1wL4uUy4NQ2ufxtrt9ku/7bjL77EkE6tqS+Rh0rXgraQ8HXutYBKv54cxouPK5HzQxmX3D0ICySJ9s5cg==}
-    dev: false
-
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
     engines: {node: '>=6.0.0'}
@@ -945,6 +934,12 @@ packages:
 
   /@types/unist@3.0.0:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
+    dev: false
+
+  /@vercel/analytics@1.1.1:
+    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
+    dependencies:
+      server-only: 0.0.1
     dev: false
 
   /@vitejs/plugin-react@4.1.0(vite@4.4.11):
@@ -3230,6 +3225,10 @@ packages:
 
   /server-destroy@1.0.1:
     resolution: {integrity: sha512-rb+9B5YBIEzYcD6x2VKidaa+cqYBJQKnU4oe4E3ANwRRN56yk/ua1YCJT1n21NTS8w6CcOclAKNP3PhdCXKYtQ==}
+    dev: false
+
+  /server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
     dev: false
 
   /sharp@0.32.6:
