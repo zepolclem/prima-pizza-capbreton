@@ -121,17 +121,16 @@ export default () => {
     return (
       <ul className="flex flex-col pb-3">
         {pizzas.map((pizza) => (
-          <li className="flex flex-row mt-3 items-end border-b-2">
+          <li className="flex flex-row mt-3 items-end border-t-2">
             <div className="flex-1 p-3">
-              <strong className="font-bold uppercase bg-slate-200 p-1 rounded">
+              <strong className="font-bold uppercase bg-slate-200 p-1 rounded font-serif">
                 {pizza.name}
               </strong>
               <p className="font-light pt-2">{pizza.recipe}</p>
             </div>
             <div className="p-3">
-              <strong className="font-mono">{pizza.price} €</strong>
+              <strong className="font-mono text-lg">{pizza.price} €</strong>
             </div>
-            <div className="divide-x-0" />
           </li>
         ))}
       </ul>
@@ -139,7 +138,12 @@ export default () => {
   };
 
   return (
-    <div className="overflow-auto">
+    <div className="p-3 md:border-4 border-double">
+      <h2 className="font-bold text-2xl">Nos pizzas</h2>
+      <p className="text-xs text-slate-800">
+        Toutes nos pizzas sont accompagnées d'olives noires. <br />
+        Prix TTC.
+      </p>
       <PizzaList />
     </div>
   );
