@@ -126,7 +126,7 @@ export default () => {
               <strong className="font-bold uppercase bg-slate-200 p-1 rounded font-serif">
                 {pizza.name}
               </strong>
-              <p className="font-light pt-2">{pizza.recipe}</p>
+              <p className="text-sm md:text-base font-light pt-2">{pizza.recipe}</p>
             </div>
             <div className="p-3">
               <strong className="font-mono text-lg">{pizza.price} €</strong>
