@@ -32,6 +32,9 @@ dependencies:
   react-dom:
     specifier: ^18.0.0
     version: 18.2.0(react@18.2.0)
+  react-minimal-pie-chart:
+    specifier: ^8.4.0
+    version: 8.4.0(react-dom@18.2.0)(react@18.2.0)
   tailwindcss:
     specifier: ^3.0.24
     version: 3.3.3
@@ -977,6 +980,10 @@ packages:
 
   /@types/scheduler@0.16.4:
     resolution: {integrity: sha512-2L9ifAGl7wmXwP4v3pN4p2FLhD0O1qsJpvKmNin5VA8+UvNVb447UDaAEV6UdrkA+m/Xs58U1RFps44x6TFsVQ==}
+    dev: false
+
+  /@types/svg-path-parser@1.1.4:
+    resolution: {integrity: sha512-i7qKm8qNFGl6rww2SNuU3Bmheia0xZFlu+M3HLU7ol5aVFRxq9rvpBhQEA2V/v0w2Sd12ZMRMrdMjCR8e81ejA==}
     dev: false
 
   /@types/unist@2.0.8:
@@ -3232,6 +3239,17 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-minimal-pie-chart@8.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-A0wG+6mRjboyMxMDrzQNWp+2+GSn2ai4ERzRFHLp/OCC45PwIR1DpDVjwedawO+5AtFpzBRQKSFm3ZUxrqIEzA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18
+      react-dom: ^16.8.0 || ^17.0.0 || ^18
+    dependencies:
+      '@types/svg-path-parser': 1.1.4
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-refresh@0.14.0:
