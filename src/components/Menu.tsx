@@ -4,8 +4,8 @@ export default () => {
   const PizzaList = () => {
     return (
       <ul className="flex flex-col pb-3">
-        {pizzas.map((pizza) => (
-          <li className="flex flex-row mt-3 items-end border-t-2">
+        {pizzas.map((pizza, index) => (
+          <li className="flex flex-row mt-3 items-end border-t-2" key={index}>
             <div className="flex-1 p-3">
               <strong className="font-bold uppercase bg-slate-200 p-1 rounded font-serif">
                 {pizza.name}
