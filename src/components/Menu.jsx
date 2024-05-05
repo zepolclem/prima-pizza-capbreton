@@ -1,6 +1,6 @@
 import react, { useEffect, useState } from 'react';
 
-export default (pizzaData) => {
+export default ({pizzaData}) => {
 
     const PizzaList = () => {
         return (
