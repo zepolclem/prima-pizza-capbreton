@@ -1,6 +1,12 @@
 ---
 import Menu from "../components/Menu";
 import Layout from "../layouts/Layout.astro";
+
+const response = await fetch(
+  "https://directus.prima-pizza-capbreton.fr/items/pizza",
+);
+const pizzaData = await response.json();
+
 ---
 
 <Layout
@@ -24,7 +30,7 @@ import Layout from "../layouts/Layout.astro";
         N'attendez plus pour commander en nous téléphonant au numéro ci-dessus !
       </p>
     </div>
-    <Menu client:load/>
+    <Menu pizzaData={pizzaData} />
     <div class="text-center">
       <a class="text-slate-800 text-xs" href="/mentions-legales/">
         Mentions légales</a

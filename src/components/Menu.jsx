@@ -1,31 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import react, { useEffect, useState } from 'react';
 
-export default () => {
-    const [pizzas, setPizzas] = useState([]);
-
-    useEffect(() => {
-        const fetchPizzas = async () => {
-            try {
-                const response = await fetch('https://directus.prima-pizza-capbreton.fr/items/pizza', {
-                    method: 'GET',
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    setPizzas(data.data);
-                } else {
-                    throw new Error('Failed to fetch pizzas');
-                }
-            } catch (error) {
-                console.error('Failed to fetch pizzas:', error);
-            }
-        };
-        fetchPizzas();
-    }, []);
+export default (pizzaData) => {
 
     const PizzaList = () => {
         return (
             <ul className="flex flex-col pb-3">
-                {pizzas.map((pizza, index) => (
+                {pizzaData.data.map((pizza, index) => (
                     <li className="flex flex-row mt-3 items-end border-t-2" key={index}>
                         <div className="flex-1 p-3">
                             <strong className="font-bold uppercase bg-slate-200 p-1 rounded font-serif">
