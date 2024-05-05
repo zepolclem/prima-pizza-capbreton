@@ -21,13 +21,14 @@ import Layout from "../layouts/Layout.astro";
       <p class="pb-3">
         Découvrez notre carte variée de pizzas, élaborées avec des ingrédients
         frais et de qualité que nous pouvons livrer directement chez vous.
-        N'attendez plus pour commander en nous téléphonant au numéro ci-dessous
-        !
+        N'attendez plus pour commander en nous téléphonant au numéro ci-dessus !
       </p>
     </div>
-    <Menu />
+    <Menu client:load/>
     <div class="text-center">
-      <a class="text-slate-800 text-xs" href="/mentions-legales/"> Mentions légales</a>
+      <a class="text-slate-800 text-xs" href="/mentions-legales/">
+        Mentions légales</a
+      >
     </div>
   </main>
 </Layout>
