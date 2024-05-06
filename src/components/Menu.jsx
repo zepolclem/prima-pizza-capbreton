@@ -6,7 +6,7 @@ export default ({ pizzaData }) => {
                 {pizzaData.data.map((pizza, index) => (
                     <li className=" mt-3 items-end border-t-2" key={index}>
                         <div className="p-3">
-                            <strong className="font-bold uppercase bg-red-200 p-1">
+                            <strong className="font-bold uppercase bg-yellow-200 bg-opacity-90 p-1">
                                 {pizza.name}
                             </strong>
                             <div className="flex flex-row justify-between">
