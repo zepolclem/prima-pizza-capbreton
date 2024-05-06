@@ -1,5 +1,3 @@
-import react, { useEffect, useState } from 'react';
-
 export default ({pizzaData}) => {
 
     const PizzaList = () => {
