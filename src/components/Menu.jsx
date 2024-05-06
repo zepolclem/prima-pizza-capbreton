@@ -10,7 +10,7 @@ export default ({ pizzaData }) => {
                                 {pizza.name}
                             </strong>
                             <div className="flex flex-row justify-between">
-                                <p className="text-sm md:text-base font-light pt-2 w-4/6 md:w-5/6">
+                                <p className="text-base pt-2 w-4/6 md:w-5/6">
                                     {pizza.recipe}
                                 </p>
                                 <div className=" w-2/6 md:w-1/6 text-right">
