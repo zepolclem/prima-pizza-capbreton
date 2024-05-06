@@ -4,17 +4,20 @@ export default ({ pizzaData }) => {
         return (
             <ul className="flex flex-col pb-3">
                 {pizzaData.data.map((pizza, index) => (
-                    <li className="flex flex-row mt-3 items-end border-t-2" key={index}>
-                        <div className="flex-1 p-3">
+                    <li className=" mt-3 items-end border-t-2" key={index}>
+                        <div className="p-3">
                             <strong className="font-bold uppercase bg-red-200 p-1">
                                 {pizza.name}
                             </strong>
-                            <p className="text-sm md:text-base font-light pt-2">
-                                {pizza.recipe}
-                            </p>
-                        </div>
-                        <div className="p-3">
-                            <strong className="font-mono text-lg">{pizza.price} €</strong>
+                            <div className="flex flex-row justify-between">
+                                <p className="text-sm md:text-base font-light pt-2 w-4/6 md:w-5/6">
+                                    {pizza.recipe}
+                                </p>
+                                <div className=" w-2/6 md:w-1/6 text-right">
+                                    <strong className="font-mono text-lg">
+                                        {pizza.price} €
+                                    </strong></div>
+                            </div>
                         </div>
                     </li>
                 ))}
