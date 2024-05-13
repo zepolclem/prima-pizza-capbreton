@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: https://directus.prima-pizza-capbreton.fr/items/pizza
+  url: https://directus.prima-pizza-capbreton.fr/items/pizza?filter[status]=published
   body: none
   auth: none
+}
+
+query {
+  filter[status]: published
 }

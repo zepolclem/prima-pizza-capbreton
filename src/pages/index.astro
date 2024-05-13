@@ -3,7 +3,7 @@ import Menu from "../components/Menu";
 import Layout from "../layouts/Layout.astro";
 
 const response = await fetch(
-  "https://directus.prima-pizza-capbreton.fr/items/pizza",
+  "https://directus.prima-pizza-capbreton.fr/items/pizza?filter[status]=published",
 );
 const pizzaData = await response.json();
 ---
@@ -20,7 +20,7 @@ const pizzaData = await response.json();
         nos chefs passionnés.
       </p>
       <p class="pb-5">
-        Théo et Marina, originaires de Capbreton, mettent leur expertise et leur
+        Nos pizzaïolos, originaires de Capbreton, mettent leur expertise et leur
         savoir-faire à votre service pour vous offrir des pizzas savoureuses et
         uniques.
       </p>
