@@ -1,0 +1,131 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const { title, description, ogImage, canonical, noindex = false } = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
+const defaultOgImage = new URL('/og-image.jpg', Astro.site);
+const finalOgImage = ogImage || defaultOgImage;
+const siteName = "La Prima Pizza";
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- Favicon optimisé -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  <!-- SEO Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  {!noindex && <meta name="robots" content="index, follow" />}
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={finalOgImage} />
+  <meta property="og:image:alt" content={`${siteName} - ${title}`} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="fr_FR" />
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={finalOgImage} />
+  <meta name="twitter:image:alt" content={`${siteName} - ${title}`} />
+  
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "@id": "https://prima-pizza-capbreton.fr/#restaurant",
+      "name": "La Prima Pizza",
+      "description": "Pizzeria artisanale à Capbreton proposant des pizzas de qualité préparées avec des ingrédients frais. Livraison et à emporter.",
+      "url": "https://prima-pizza-capbreton.fr/",
+      "telephone": "+33558749495",
+      "priceRange": "€€",
+      "servesCuisine": ["Italian", "Pizza"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "77 avenue Georges Pompidou",
+        "addressLocality": "Capbreton",
+        "postalCode": "40130",
+        "addressCountry": "FR",
+        "addressRegion": "Nouvelle-Aquitaine"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.6394,
+        "longitude": -1.4311
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "18:30",
+          "closes": "22:00"
+        }
+      ],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Menu Pizzas",
+        "description": "Carte complète de nos pizzas artisanales"
+      },
+      "paymentAccepted": ["Cash", "Credit Card"],
+      "currenciesAccepted": "EUR",
+      "founder": {
+        "@type": "Person",
+        "name": "Pizzaïolos de Capbreton"
+      },
+      "foundingDate": "2022",
+      "areaServed": ["Capbreton", "Hossegor"],
+      "serviceType": ["Delivery", "Takeaway"],
+      "image": [
+        "https://prima-pizza-capbreton.fr/og-image.jpg"
+      ],
+      "sameAs": []
+    }
+  </script>
+  
+  <!-- Google Fonts optimisé -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@300;400;500;600;700&display=swap" 
+    rel="stylesheet" 
+  />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/styles/global.css" as="style" />
+  
+  <!-- Theme color -->
+  <meta name="theme-color" content="#dc2626" />
+  <meta name="msapplication-TileColor" content="#dc2626" />
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+  <slot />
+</body>
+</html> 

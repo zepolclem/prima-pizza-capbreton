@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://prima-pizza-capbreton.fr/sitemap.xml
+
+# Crawl-delay pour éviter la surcharge
+Crawl-delay: 1
+
+# Disallow des fichiers sensibles (s'il y en a)
+Disallow: /api/
+Disallow: /_astro/
+
+# Allow des pages importantes
+Allow: /
+Allow: /mentions-legales/ 

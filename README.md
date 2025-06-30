@@ -1,4 +1,114 @@
-# Astro Starter Kit: Minimal
+# 🍕 La Prima Pizza - Site Web
+
+Site web de la pizzeria La Prima Pizza à Capbreton, développé avec Astro et TailwindCSS.
+
+## 📋 Description
+
+Site vitrine moderne pour La Prima Pizza, pizzeria artisanale située à Capbreton. Le site présente :
+
+- **Page d'accueil** : Présentation de la pizzeria, menu complet des pizzas, informations de contact
+- **Page mentions légales** : Informations légales requises
+- **Design responsive** : Optimisé pour tous les appareils (mobile, tablette, desktop)
+- **Interface moderne** : Utilisation de TailwindCSS pour un design épuré et professionnel
+
+## 🚀 Technologies utilisées
+
+- **[Astro](https://astro.build/)** - Framework web moderne
+- **[TailwindCSS](https://tailwindcss.com/)** - Framework CSS utilitaire
+- **TypeScript** - Typage statique
+
+## 📦 Installation
+
+```bash
+# Cloner le projet
+git clone [url-du-repo]
+cd prima-pizza-capbreton-ws
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+```
+
+Le site sera disponible à l'adresse : `http://localhost:4321`
+
+## 🛠️ Scripts disponibles
+
+```bash
+# Serveur de développement
+npm run dev
+
+# Build de production
+npm run build
+
+# Prévisualisation du build
+npm run preview
+```
+
+## 📁 Structure du projet
+
+```
+prima-pizza-capbreton-ws/
+├── data/
+│   └── pizzas.ts          # Données des pizzas
+├── public/
+│   └── favicon.svg        # Favicon du site
+├── src/
+│   └── pages/
+│       ├── index.astro           # Page d'accueil
+│       └── mentions-legales.astro # Page mentions légales
+├── astro.config.mjs       # Configuration Astro
+├── tailwind.config.js     # Configuration TailwindCSS
+└── package.json
+```
+
+## 📞 Informations de contact
+
+**La Prima Pizza**
+- 📍 77 avenue Georges Pompidou, 40130 Capbreton
+- ☎️ 05 58 74 94 95
+- 🕐 18h30 - 22h (Fermé le lundi)
+
+## 🎨 Design
+
+Le site utilise une palette de couleurs centrée sur le rouge (couleur de la pizzeria) avec :
+- Header rouge avec informations de contact
+- Section hero avec dégradé rouge
+- Cards blanches pour les pizzas avec accents rouges
+- Footer sombre pour les informations de contact
+- Design responsive avec breakpoints Tailwind
+
+## 📝 Fonctionnalités
+
+- ✅ Page d'accueil avec présentation complète
+- ✅ Menu des pizzas avec prix dynamique depuis `data/pizzas.ts`
+- ✅ Liens téléphone pour commande directe
+- ✅ Navigation vers section menu
+- ✅ Page mentions légales complète
+- ✅ Design responsive (mobile-first)
+- ✅ Optimisations SEO (meta tags, structure HTML sémantique)
+- ✅ Performance optimisée (Astro + TailwindCSS)
+
+## 🚀 Déploiement
+
+Le site peut être déployé sur n'importe quelle plateforme supportant les sites statiques :
+- Netlify
+- Vercel
+- GitHub Pages
+- Firebase Hosting
+- etc.
+
+```bash
+# Build de production
+npm run build
+
+# Le dossier dist/ contient les fichiers statiques à déployer
+```
+
+## 📄 Licence
+
+© 2024 La Prima Pizza - Tous droits réservés
 
 ```sh
 npm create astro@latest -- --template minimal
