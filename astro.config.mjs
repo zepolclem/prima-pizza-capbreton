@@ -6,7 +6,8 @@ import vercelStatic from '@astrojs/vercel/static';
 export default defineConfig({
   site: "https://prima-pizza-capbreton.fr",
   output: "static",
-  adapter: vercelStatic(),
+  adapter: vercelStatic({}),
+
   vite: {
     plugins: [tailwindcss()],
   },
