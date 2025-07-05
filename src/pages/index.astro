@@ -9,17 +9,28 @@ const image = "/android-chrome-512x512.png";
 
 <Layout title={title} description={description} image={image} canonical="/">
   <!-- Hero Section -->
-  <section class="py-6 sm:py-8 mb-6">
+  <section class="relative  mb-8 py-8 sm:py-12">
     <div class="container mx-auto px-4">
       <div class="text-center">
-        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-3">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold font-dancing text-red-600 mb-4">
           Benvenuto à la Prima Pizza !
         </h1>
         
-        <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mb-4 leading-relaxed">
+        <p class="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto mb-8 leading-relaxed">
           La pizzeria artisanale à <strong>Capbreton</strong> et <strong>Hossegor</strong>. 
           Découvrez nos pizzas savoureuses préparées avec soin par nos chefs passionnés.
         </p>
+        
+        <!-- Bouton scroll vers la carte -->
+        <a 
+          href="#menu-title"
+          class="btn-touch inline-flex items-center justify-center px-8 py-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg"
+          aria-label="Voir notre carte des pizzas"
+        >
+          <span class="mr-2" aria-hidden="true">🍕</span>
+          Voir notre carte
+          <span class="ml-2 animate-bounce" aria-hidden="true">↓</span>
+        </a>
       </div>
     </div>
   </section>
@@ -53,7 +64,7 @@ const image = "/android-chrome-512x512.png";
             <div class="text-6xl sm:text-7xl md:text-8xl mb-4">
               👨🏻‍🍳👩🏻‍🍳
             </div>
-            <p class="text-xl sm:text-2xl font-bold text-red-500 italic">
+            <p class="text-xl sm:text-2xl font-bold font-dancing text-red-500">
               Buon appetito !
             </p>
           </div>

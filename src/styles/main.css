@@ -23,6 +23,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Dancing Script font optimization */
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Custom utility classes */
 .btn-touch {
   min-width: 44px;
@@ -48,6 +57,31 @@ a[href^="mailto:"] {
   transition: all 0.2s ease-in-out;
 }
 
+/* Scroll down indicator animation */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -6px, 0);
+  }
+  70% {
+    transform: translate3d(0, -3px, 0);
+  }
+  90% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Smooth scroll anchor offset */
+html {
+  scroll-padding-top: 2rem;
+}
+
 /* Print styles */
 @media print {
   .no-print {
@@ -63,6 +97,10 @@ a[href^="mailto:"] {
     max-width: none;
     margin: 0;
     padding: 0;
+  }
+  
+  .font-dancing {
+    font-family: serif;
   }
 }
 

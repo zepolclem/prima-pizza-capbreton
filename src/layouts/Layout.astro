@@ -47,6 +47,9 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://plausible.zepolclem.dev" />
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -111,6 +114,11 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
         line-height: 1.6;
       }
       
+      /* Dancing Script font family */
+      .font-dancing {
+        font-family: 'Dancing Script', cursive;
+      }
+      
       /* Prevent layout shift */
       .container {
         max-width: 1200px;
@@ -125,6 +133,11 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
         display: inline-flex;
         align-items: center;
         justify-content: center;
+      }
+      
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
       }
     </style>
     

@@ -40,10 +40,11 @@ export default () => {
                 <div className="text-center mb-8">
                     <h2 
                         id="menu-title"
-                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-2"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold font-dancing text-red-600 mb-2"
                     >
-                        Nos Pizzas 🍕
+                        Nos Pizzas
                     </h2>
+                    <div className="text-4xl mb-4">🍕</div>
                     <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
                         Toutes nos pizzas sont accompagnées d'olives noires et préparées avec des ingrédients frais
                     </p>
@@ -56,7 +57,7 @@ export default () => {
                 </div>
 
                 <div className="text-center bg-slate-50 rounded-lg p-4 sm:p-6">
-                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                    <h3 className="text-xl font-bold font-dancing text-slate-800 mb-2">
                         Pour commander
                     </h3>
                     <p className="text-sm text-slate-600 mb-4">
