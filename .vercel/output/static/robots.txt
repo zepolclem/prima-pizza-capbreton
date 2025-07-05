@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://prima-pizza-capbreton.fr/sitemap.xml
+
+# Disallow admin pages if any
+Disallow: /admin/
+Disallow: /_astro/ 
