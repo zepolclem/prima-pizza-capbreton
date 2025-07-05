@@ -28,7 +28,7 @@ export default () => {
     };
 
     return (
-        <div className="p-3 md:border-4 border-double">
+        <div className="p-3">
             <div className="flex flex-row justify-between">
                 <h2 className="font-bold text-2xl min-w-200">Nos Piiiizzas 🤌 </h2>
                 <p className="text-xs text-slate-800 text-right">
