@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Styles personnalisés pour Prima Pizza */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+} 
