@@ -1,42 +1,77 @@
 import pizzas from "../data/pizzas";
 
 export default () => {
-
-    const PizzaList = () => {
-        return (
-            <ul className="flex flex-col pb-3">
-                {pizzas.map((pizza, index) => (
-                    <li className=" mt-3 items-end border-t-2" key={index}>
-                        <div className="p-3">
-                            <strong className="font-bold uppercase bg-yellow-200 bg-opacity-80 p-1">
-                                {pizza.name}
-                            </strong>
-                            <div className="flex flex-row justify-between">
-                                <p className="text-base pt-2 w-4/6 md:w-5/6">
-                                    {pizza.recipe}
-                                </p>
-                                <div className=" w-2/6 md:w-1/6 text-right">
-                                    <strong className="font-mono text-lg">
-                                        {pizza.price} €
-                                    </strong></div>
-                            </div>
-                        </div>
-                    </li>
-                ))}
-            </ul>
-        );
-    };
+    const PizzaCard = ({ pizza, index }) => (
+        <div 
+            className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-4 border border-slate-200"
+            role="article"
+            aria-labelledby={`pizza-${index}`}
+        >
+            <div className="flex flex-col h-full">
+                <div className="flex-1">
+                    <h3 
+                        id={`pizza-${index}`}
+                        className="font-bold text-lg mb-2 text-slate-800 bg-yellow-200 bg-opacity-80 px-2 py-1 rounded-md inline-block"
+                    >
+                        {pizza.name}
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                        {pizza.recipe}
+                    </p>
+                </div>
+                
+                <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                    <div className="flex items-center gap-2">
+                        <span className="text-2xl font-bold text-green-600 font-mono">
+                            {pizza.price}€
+                        </span>
+                        <span className="text-xs text-slate-500 uppercase tracking-wide">
+                            TTC
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
-        <div className="p-3">
-            <div className="flex flex-row justify-between">
-                <h2 className="font-bold text-2xl min-w-200">Nos Piiiizzas 🤌 </h2>
-                <p className="text-xs text-slate-800 text-right">
-                    Toutes nos pizzas sont accompagnées d'olives noires.<br />
-                    Prix TTC.
-                </p>
+        <section className="py-8" aria-labelledby="menu-title">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-8">
+                    <h2 
+                        id="menu-title"
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-2"
+                    >
+                        Nos Pizzas 🍕
+                    </h2>
+                    <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+                        Toutes nos pizzas sont accompagnées d'olives noires et préparées avec des ingrédients frais
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
+                    {pizzas.map((pizza, index) => (
+                        <PizzaCard key={index} pizza={pizza} index={index} />
+                    ))}
+                </div>
+
+                <div className="text-center bg-slate-50 rounded-lg p-4 sm:p-6">
+                    <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                        Pour commander
+                    </h3>
+                    <p className="text-sm text-slate-600 mb-4">
+                        Appelez-nous pour passer commande ou organiser une livraison
+                    </p>
+                    <a 
+                        href="tel:+33558749495"
+                        className="btn-touch inline-flex items-center justify-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-base sm:text-lg"
+                        aria-label="Appeler Prima Pizza pour commander"
+                    >
+                        <span className="mr-2" aria-hidden="true">📞</span>
+                        05 58 74 94 95
+                    </a>
+                </div>
             </div>
-            <PizzaList />
-        </div>
+        </section>
     );
 };

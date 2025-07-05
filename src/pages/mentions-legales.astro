@@ -1,80 +1,95 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const title = "Mentions légales - Prima Pizza Capbreton";
+const description = "Mentions légales de Prima Pizza, pizzeria à Capbreton et Hossegor. Informations légales et conditions d'utilisation.";
 ---
 
-<Layout
-  title="Prima Pizza Capbreton - Livraison de pizzas et pizzas à emporter."
->
-  <main>
+<Layout title={title} description={description} canonical="/mentions-legales/">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <div class="bg-white rounded-lg shadow-sm p-6 sm:p-8">
+      <h1 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-6 text-center">
+        Mentions légales
+      </h1>
+      
+      <div class="space-y-6 text-sm sm:text-base text-slate-700">
+        <section>
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-800 mb-3">
+            Informations légales
+          </h2>
+          <div class="bg-slate-50 p-4 rounded-lg">
+            <p class="mb-2">
+              <strong>Nom de l'entreprise :</strong> Prima Pizza
+            </p>
+            <p class="mb-2">
+              <strong>Adresse :</strong> 77 avenue Georges Pompidou, 40130 Capbreton
+            </p>
+            <p class="mb-2">
+              <strong>Téléphone :</strong> 
+              <a href="tel:+33558749495" class="text-green-600 hover:text-green-700 font-semibold">
+                05 58 74 94 95
+              </a>
+            </p>
+            <p class="mb-2">
+              <strong>Activité :</strong> Pizzeria - Vente à emporter et livraison
+            </p>
+          </div>
+        </section>
 
-    <a href="/">Voir la Carte</a>
+        <section>
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-800 mb-3">
+            Hébergement du site
+          </h2>
+          <div class="bg-slate-50 p-4 rounded-lg">
+            <p class="mb-2">
+              <strong>Hébergeur :</strong> Vercel Inc.
+            </p>
+            <p class="mb-2">
+              <strong>Adresse :</strong> 340 S Lemon Ave #4133, Walnut, CA 91789, USA
+            </p>
+          </div>
+        </section>
 
-    <h1>Mentions légales :</h1>
-    <section>
-      <h2>1. Informations générales :</h2>
-      <p>
-        Nom du site : www.prima-pizza-capbreton.fr<br />
-         Propriétaire : Théo Giverso<br />
-         Adresse : 77 avenue Georges Pompidou, 40130 Capbreton<br />
-         Contact : 05 58 74 94 95
-      </p>
-    </section>
+        <section>
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-800 mb-3">
+            Propriété intellectuelle
+          </h2>
+          <p class="leading-relaxed">
+            L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. 
+            Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
+          </p>
+        </section>
 
-    <section>
-      <h2>2. Propriété intellectuelle :</h2>
-      <p>
-        Tous les contenus présents sur ce site (textes, images, vidéos, etc.)
-        sont la propriété exclusive de Théo Giverso et sont protégés par les
-        lois relatives à la propriété intellectuelle. Toute reproduction,
-        distribution ou utilisation non autorisée est strictement interdite.
-      </p>
-    </section>
+        <section>
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-800 mb-3">
+            Données personnelles
+          </h2>
+          <p class="leading-relaxed">
+            Conformément à la loi "Informatique et Libertés" du 6 janvier 1978, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. 
+            Pour exercer ce droit, veuillez nous contacter par téléphone au 05 58 74 94 95.
+          </p>
+        </section>
 
-    <section>
-      <h2>3. Collecte de données personnelles :</h2>
-      <p>
-        Ce site ne collecte aucune donnée personnelle de ses visiteurs, y
-        compris les cookies. Aucune information n'est stockée ou utilisée à des
-        fins de suivi ou de ciblage publicitaire.
-      </p>
-    </section>
-
-    <section>
-      <h2>4. Responsabilité :</h2>
-      <p>
-        Théo Giverso s'efforce d'assurer l'exactitude des informations relatives
-        aux produits et services offerts sur ce site, mais ne peut garantir
-        l'absence d'erreurs, notamment dans les descriptions des pizzas, les
-        prix ou les horaires d'ouverture. Théo Giverso décline toute
-        responsabilité quant à l'utilisation qui pourrait être faite des
-        informations présentes sur ce site.
-      </p>
-    </section>
-
-    <section>
-      <h2>5. Liens externes :</h2>
-      <p>
-        Ce site peut contenir des liens vers des sites externes. [Nom du
-        propriétaire] n'est pas responsable des contenus ou pratiques de ces
-        sites tiers.
-      </p>
-    </section>
-
-    <section>
-      <h2>6. Modification des mentions légales :</h2>
-      <p>
-        Théo Giverso se réserve le droit de modifier les présentes mentions
-        légales à tout moment. Les utilisateurs du site sont invités à les
-        consulter régulièrement.
-      </p>
-    </section>
-
-    <section>
-      <h2>7. Hébergement du site :</h2>
-      <p>
-        Ce site est hébergé par la société Vercel Inc., située 340 S Lemon Ave
-        #4133 Walnut, CA 91789, et joignable au (559) 288-7060.
-      </p>
-    </section>
-  </main>
+        <section>
+          <h2 class="text-lg sm:text-xl font-semibold text-slate-800 mb-3">
+            Cookies et analytics
+          </h2>
+          <p class="leading-relaxed">
+            Ce site utilise Plausible Analytics, un service d'analyse respectueux de la vie privée qui ne collecte pas de données personnelles identifiables et ne nécessite pas de consentement aux cookies selon le RGPD.
+          </p>
+        </section>
+      </div>
+    </div>
+    
+    <div class="text-center mt-8">
+      <a 
+        href="/"
+        class="btn-touch inline-flex items-center justify-center px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+        aria-label="Retour à l'accueil"
+      >
+        <span class="mr-2" aria-hidden="true">🏠</span>
+        Retour à l'accueil
+      </a>
+    </div>
+  </div>
 </Layout>

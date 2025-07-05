@@ -1,33 +1,54 @@
 <header
-  class="sticky w-full top-0 bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 flex flex-col text-center py-2"
+  class="w-full bg-gradient-to-r from-slate-100 via-slate-200 to-slate-100 shadow-sm"
+  role="banner"
 >
-  <div class="container mx-auto font-mono">
-    <div>
-      <h1 class="font-bold uppercase font-serif text-3xl text-red-500 text-bor">
-        La Prima Pizza <div class="hidden">Capbreton</div>
+  <div class="container mx-auto px-4 py-4 md:py-6">
+    <div class="text-center">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase font-serif text-red-500 mb-2">
+        Prima Pizza
+        <span class="block text-lg sm:text-xl md:text-2xl text-slate-700 font-normal normal-case">
+          Capbreton
+        </span>
       </h1>
     </div>
-    <div
-      class="border-y-2 border-double border-slate-700 text-slate-800 py-2 m-2"
-    >
-      <div
-        class="flex flex-row justify-center font-bold font-serif uppercase text-xs"
-      >
-        <div class="px-2">
-          <h2>Pizzas à emporter</h2>
+    
+    <div class="border-y-2 border-double border-slate-700 py-3 my-4">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 font-bold font-serif uppercase text-xs sm:text-sm text-slate-800 mb-2">
+        <div class="flex items-center gap-1">
+          <span aria-label="Pizzas à emporter">🍕</span>
+          <span>Pizzas à emporter</span>
         </div>
-        <div class="px-2">
-          <h2>Livraison de pizzas</h2>
+        <div class="hidden sm:block text-slate-400">•</div>
+        <div class="flex items-center gap-1">
+          <span aria-label="Livraison">🚚</span>
+          <span>Livraison</span>
         </div>
       </div>
-      <div class="text-xs">77 avenue Georges Pompidou, 40130 Capbreton</div>
-      <div class="text-xs">18h30 - 22h | Fermé le lundi</div>
+      
+      <div class="text-center space-y-1">
+        <address class="text-xs sm:text-sm text-slate-800 not-italic">
+          77 avenue Georges Pompidou, 40130 Capbreton
+        </address>
+        <div class="text-xs sm:text-sm text-slate-700 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+          <span class="flex items-center gap-1">
+            <span aria-label="Horaires">🕐</span>
+            <span>18h30 - 22h</span>
+          </span>
+          <span class="hidden sm:block text-slate-400">•</span>
+          <span class="text-red-600 font-medium">Fermé le lundi</span>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <a class="font-semibold text-green-600" href="tel:+33558749495">
-        05 58 74 94 95</a
+    <div class="text-center">
+      <a 
+        href="tel:+33558749495" 
+        class="btn-touch inline-flex items-center justify-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 text-lg sm:text-xl"
+        aria-label="Appeler Prima Pizza au 05 58 74 94 95"
       >
+        <span class="mr-2" aria-hidden="true">📞</span>
+        05 58 74 94 95
+      </a>
     </div>
   </div>
 </header>

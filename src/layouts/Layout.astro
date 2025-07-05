@@ -1,40 +1,144 @@
 ---
 import Header from "../components/Header.astro";
-import "../styles/main.css";
-import "../styles/global.css";
 
 interface Props {
   title: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "Pizzeria Prima Pizza à Capbreton et Hossegor. Pizzas artisanales à emporter et livraison. Ingrédients frais, recettes authentiques.", image = "/android-chrome-512x512.png", canonical } = Astro.props;
+
+const siteUrl = "https://prima-pizza-capbreton.fr";
+const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content="Pizzas à emporter et livraison de pizzas sur Capbreton et Hossegor."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="pizza, Capbreton, Hossegor, livraison, à emporter, pizzeria, artisanale, ingrédients frais, Prima Pizza" />
+    <meta name="author" content="Prima Pizza Capbreton" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prima Pizza Capbreton" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="fr_FR" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${image}`} />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://plausible.zepolclem.dev" />
+    
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    
+    <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Analytics -->
     <script
       defer
       data-domain="prima-pizza-capbreton.fr"
       src="https://plausible.zepolclem.dev/js/script.js"></script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://prima-pizza-capbreton.fr",
+        "name": "Prima Pizza Capbreton",
+        "description": "Pizzeria artisanale à Capbreton et Hossegor. Pizzas à emporter et livraison avec ingrédients frais.",
+        "url": "https://prima-pizza-capbreton.fr",
+        "telephone": "+33558749495",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "77 avenue Georges Pompidou",
+          "addressLocality": "Capbreton",
+          "postalCode": "40130",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "43.6394",
+          "longitude": "-1.4294"
+        },
+        "openingHours": [
+          "Tu-Su 18:30-22:00"
+        ],
+        "servesCuisine": "Pizza",
+        "priceRange": "€€",
+        "image": "https://prima-pizza-capbreton.fr/android-chrome-512x512.png",
+        "sameAs": [],
+        "hasMenu": {
+          "@type": "Menu",
+          "name": "Carte des Pizzas",
+          "description": "Notre sélection de pizzas artisanales"
+        }
+      }
+    </script>
+    
     <title>{title}</title>
+    
+    <!-- Critical CSS inline -->
+    <style>
+      /* Critical CSS for initial render */
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      
+      /* Prevent layout shift */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+      
+      /* Touch-friendly minimum tap target */
+      .btn-touch {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="/src/styles/main.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/src/styles/main.css" /></noscript>
   </head>
-  <body class="font-serif mx-auto max-w-5xl md:shadow-md bg-white">
+  <body class="bg-white">
     <Header />
-    <div class="container p-3 mx-auto md:text-base text-left sm:text-sm">
+    <main class="container mx-auto px-4 py-6 max-w-5xl">
       <slot />
-    </div>
-    <!-- <Footer /  > -->
+    </main>
+    
+    <!-- Load non-critical styles -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
   </body>
 </html>
