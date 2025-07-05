@@ -104,54 +104,13 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
     
     <title>{title}</title>
     
-    <!-- Critical CSS inline -->
-    <style>
-      /* Critical CSS for initial render */
-      body {
-        font-family: system-ui, -apple-system, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-      }
-      
-      /* Dancing Script font family */
-      .font-dancing {
-        font-family: 'Dancing Script', cursive;
-      }
-      
-      /* Prevent layout shift */
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-      
-      /* Touch-friendly minimum tap target */
-      .btn-touch {
-        min-width: 44px;
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      /* Smooth scroll behavior */
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-    
-    <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="/src/styles/main.css" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="/src/styles/main.css" /></noscript>
+    <!-- Styles CSS Global -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body class="bg-white">
     <Header />
     <main class="container mx-auto px-4 py-6 max-w-5xl">
       <slot />
     </main>
-    
-    <!-- Load non-critical styles -->
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </body>
 </html>

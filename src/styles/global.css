@@ -1,6 +1,102 @@
 @import "tailwindcss";
 
-/* Styles non-critiques pour Prima Pizza */
+/* ========================================
+   STYLES PRIMA PIZZA - FICHIER GLOBAL
+   ======================================== */
+
+/* Variables CSS */
+:root {
+  --primary-red: #ef4444;
+  --primary-green: #16a34a;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --bg-light: #f8fafc;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* ========================================
+   STYLES DE BASE
+   ======================================== */
+
+/* Base styles */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-padding-top: 2rem;
+}
+
+/* Dancing Script font optimization */
+.font-dancing {
+  font-family: 'Dancing Script', cursive;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   COMPOSANTS PERSONNALISÉS
+   ======================================== */
+
+/* Custom utility classes */
+.btn-touch {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+.btn-touch:focus-visible {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+/* Smooth hover transitions */
+.btn-touch,
+a[href^="tel:"],
+a[href^="mailto:"] {
+  transition: all 0.2s ease-in-out;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* Scroll down indicator animation */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -6px, 0);
+  }
+  70% {
+    transform: translate3d(0, -3px, 0);
+  }
+  90% {
+    transform: translate3d(0, -1px, 0);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
 
 /* Animations et transitions avancées */
 @keyframes fadeIn {
@@ -32,6 +128,15 @@
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 /* Classes d'animation */
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out;
@@ -44,6 +149,14 @@
 .animate-pulse-subtle {
   animation: pulse 2s infinite;
 }
+
+.icon-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* ========================================
+   COMPOSANTS AVANCÉS
+   ======================================== */
 
 /* Styles pour les éléments décoratifs */
 .pizza-card::before {
@@ -93,26 +206,6 @@
   opacity: 1;
 }
 
-/* Styles pour les icônes */
-.icon-bounce {
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  40%, 43% {
-    transform: translate3d(0, -10px, 0);
-  }
-  70% {
-    transform: translate3d(0, -5px, 0);
-  }
-  90% {
-    transform: translate3d(0, -2px, 0);
-  }
-}
-
 /* Styles pour les microinteractions */
 .micro-interaction {
   position: relative;
@@ -142,15 +235,6 @@
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
 }
 
 /* Styles pour les badges */
@@ -219,7 +303,7 @@
   top: 1rem;
 }
 
-/* Styles pour les grilles masonry (si nécessaire) */
+/* Styles pour les grilles masonry */
 .masonry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -246,4 +330,66 @@
 .nav-item:hover::after,
 .nav-item.active::after {
   width: 100%;
+}
+
+/* ========================================
+   MEDIA QUERIES
+   ======================================== */
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .font-dancing {
+    font-family: serif;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gradient-to-br {
+    background: white !important;
+  }
+  
+  .text-slate-600 {
+    color: #000 !important;
+  }
+  
+  .border-slate-200 {
+    border-color: #000 !important;
+  }
+}
+
+/* Dark mode support (for future implementation) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-light: #0f172a;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+  }
 }
