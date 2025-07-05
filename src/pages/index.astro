@@ -1,11 +1,8 @@
 ---
 import Menu from "../components/Menu";
 import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 
-const response = await fetch(
-  "https://directus.prima-pizza-capbreton.fr/items/pizza?filter[status]=published",
-);
-const pizzaData = await response.json();
 ---
 
 <Layout
@@ -15,9 +12,9 @@ const pizzaData = await response.json();
     <div class="container text-xs md:text-base text-slate-800 p-2">
       <p class="pb-5 italic text-xl">Benvenuto à la Prima Pizza !</p>
       <p class="pb-5">
-        La pizzeria à Capbreton et Hossegor ! Nous sommes fiers de
-        vous proposer des pizzas artisanales de qualité, préparées avec soin par
-        nos chefs passionnés.
+        La pizzeria à Capbreton et Hossegor ! Nous sommes fiers de vous proposer
+        des pizzas artisanales de qualité, préparées avec soin par nos chefs
+        passionnés.
       </p>
       <p class="pb-5">
         Nos pizzaïolos, originaires de Capbreton, mettent leur expertise et leur
@@ -34,7 +31,7 @@ const pizzaData = await response.json();
         <p class="text-4xl text-right">👨🏻‍🍳 👩🏻‍🍳</p>
       </div>
     </div>
-    <Menu pizzaData={pizzaData} />
+    <Menu />
     <div class="text-center">
       <a class="text-slate-800 text-xs" href="/mentions-legales/">
         Mentions légales</a

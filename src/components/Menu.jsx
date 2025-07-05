@@ -1,9 +1,11 @@
-export default ({ pizzaData }) => {
+import pizzas from "../data/pizzas";
+
+export default () => {
 
     const PizzaList = () => {
         return (
             <ul className="flex flex-col pb-3">
-                {pizzaData.data.map((pizza, index) => (
+                {pizzas.map((pizza, index) => (
                     <li className=" mt-3 items-end border-t-2" key={index}>
                         <div className="p-3">
                             <strong className="font-bold uppercase bg-yellow-200 bg-opacity-80 p-1">
