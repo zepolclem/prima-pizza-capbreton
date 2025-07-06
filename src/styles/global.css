@@ -5,29 +5,40 @@
    STYLES PRIMA PIZZA - FICHIER GLOBAL
    ======================================== */
 
-/* Local fonts (uncomment and add font files to use) */
+/* Polices locales optimisées pour les performances */
 
 @font-face {
   font-family: 'panpizza';
-  src: url('/fonts/panpizza.ttf') format('truetype');
+  src: url('/fonts/panpizza.woff2') format('woff2'),
+       url('/fonts/panpizza.woff') format('woff'),
+       url('/fonts/panpizza.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* Évite le blocage du rendu, affiche une police de fallback */
 }
 
 .font-panpizza {
-  font-family: 'panpizza';
+  font-family: 'panpizza', 'Comic Sans MS', cursive, sans-serif; /* Polices de fallback */
   font-size: 2.5rem;
 }
 
 @font-face {
   font-family: 'pizza';
-  src: url('/fonts/Pizza.ttf') format('truetype');
+  src: url('/fonts/Pizza.woff2') format('woff2'),
+       url('/fonts/Pizza.woff') format('woff'),
+       url('/fonts/Pizza.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: swap; /* Évite le blocage du rendu, affiche une police de fallback */
 }
 
 .font-pizza {
-  font-family: 'pizza';
+  font-family: 'pizza', 'Comic Sans MS', cursive, sans-serif; /* Polices de fallback */
+}
+
+/* Optimisations pour les polices critiques */
+@media (prefers-reduced-motion: reduce) {
+  .font-panpizza, .font-pizza {
+    font-display: block; /* Pour les utilisateurs préférant moins d'animations */
+  }
 }

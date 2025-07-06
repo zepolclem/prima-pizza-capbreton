@@ -38,6 +38,16 @@ const canonicalUrl = canonical
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
 
+    <!-- DNS Prefetch pour les domaines externes -->
+    <link rel="dns-prefetch" href="https://plausible.zepolclem.dev" />
+    
+    <!-- Préchargement des polices critiques optimisées -->
+    <link rel="preload" href="/fonts/panpizza.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/fonts/Pizza.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    
+    <!-- Préconnexion pour analytics -->
+    <link rel="preconnect" href="https://plausible.zepolclem.dev" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prima Pizza Capbreton" />
@@ -53,7 +63,6 @@ const canonicalUrl = canonical
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${image}`} />
 
-    <link rel="preconnect" href="https://plausible.zepolclem.dev" />
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -62,7 +71,7 @@ const canonicalUrl = canonical
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Analytics -->
+    <!-- Analytics - différé pour ne pas bloquer le rendu -->
     <script
       defer
       data-domain="prima-pizza-capbreton.fr"
