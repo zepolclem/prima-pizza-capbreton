@@ -2,27 +2,35 @@
 import Menu from "../components/Menu";
 import Layout from "../layouts/Layout.astro";
 
-const title = "Prima Pizza Capbreton - Livraison de pizzas et pizzas à emporter";
-const description = "Pizzeria Prima Pizza à Capbreton et Hossegor. Pizzas artisanales à emporter et livraison. Ingrédients frais, recettes authentiques. Commandez au 05 58 74 94 95";
+const title =
+  "Prima Pizza Capbreton - Livraison de pizzas et pizzas à emporter";
+const description =
+  "Pizzeria Prima Pizza à Capbreton et Hossegor. Pizzas artisanales à emporter et livraison. Ingrédients frais, recettes authentiques. Commandez au 05 58 74 94 95";
 const image = "/android-chrome-512x512.png";
 ---
 
 <Layout title={title} description={description} image={image} canonical="/">
   <!-- Hero Section -->
-  <section class="relative  mb-8 py-8 sm:py-12">
+  <section class="relative mb-8 py-8 sm:py-12">
     <div class="container mx-auto px-4">
       <div class="text-center">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold font-dancing text-red-600 mb-4">
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl font-bold font-dancing text-red-600 mb-4"
+        >
           Benvenuto à la Prima Pizza !
         </h1>
-        
-        <p class="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto mb-8 leading-relaxed">
-          La pizzeria artisanale à <strong>Capbreton</strong> et <strong>Hossegor</strong>. 
-          Découvrez nos pizzas savoureuses préparées avec soin par nos chefs passionnés.
+
+        <p
+          class="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto mb-8 leading-relaxed"
+        >
+          La pizzeria artisanale à <strong>Capbreton</strong> et <strong
+            >Hossegor</strong
+          >. Découvrez nos pizzas savoureuses préparées avec soin par nos chefs
+          passionnés.
         </p>
-        
+
         <!-- Bouton scroll vers la carte -->
-        <a 
+        <a
           href="#menu-title"
           class="btn-touch inline-flex items-center justify-center px-8 py-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg"
           aria-label="Voir notre carte des pizzas"
@@ -40,30 +48,33 @@ const image = "/android-chrome-512x512.png";
     <div class="container mx-auto px-4">
       <div class="bg-white rounded-lg shadow-sm p-6 sm:p-8">
         <h2 id="about-title" class="sr-only">À propos de Prima Pizza</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center"
+        >
           <div class="space-y-4">
             <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Nous sommes fiers de vous proposer des <strong>pizzas artisanales de qualité</strong>, 
-              préparées avec soin par nos chefs passionnés originaires de Capbreton.
+              Nous sommes fiers de vous proposer des <strong
+                >pizzas artisanales de qualité</strong
+              >, préparées avec soin par nos chefs passionnés originaires de
+              Capbreton.
             </p>
-            
+
             <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Nos pizzaïolos mettent leur expertise et leur savoir-faire à votre service pour vous 
-              offrir des pizzas savoureuses et uniques, élaborées avec des 
+              Nos pizzaïolos mettent leur expertise et leur savoir-faire à votre
+              service pour vous offrir des pizzas savoureuses et uniques,
+              élaborées avec des
               <strong>ingrédients frais et de qualité</strong>.
             </p>
-            
+
             <p class="text-sm sm:text-base text-slate-700 leading-relaxed">
-              Découvrez notre carte variée que nous pouvons 
+              Découvrez notre carte variée que nous pouvons
               <strong>livrer directement chez vous</strong> ou à emporter !
             </p>
           </div>
-          
+
           <div class="text-center">
-            <div class="text-6xl sm:text-7xl md:text-8xl mb-4">
-              👨🏻‍🍳👩🏻‍🍳
-            </div>
+            <div class="text-6xl sm:text-7xl md:text-8xl mb-4">👨🏻‍🍳👩🏻‍🍳</div>
             <p class="text-xl sm:text-2xl font-bold font-dancing text-red-500">
               Buon appetito !
             </p>
@@ -80,8 +91,8 @@ const image = "/android-chrome-512x512.png";
   <footer class="mt-8 pt-6 border-t border-slate-200">
     <div class="container mx-auto px-4 text-center">
       <nav aria-label="Liens légaux">
-        <a 
-          href="/mentions-legales/" 
+        <a
+          href="/mentions-legales/"
           class="text-slate-600 hover:text-slate-800 text-sm underline hover:no-underline transition-colors duration-200"
         >
           Mentions légales

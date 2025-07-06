@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../src/components/";
 
 /* ========================================
    STYLES PRIMA PIZZA - FICHIER GLOBAL
@@ -80,15 +81,24 @@ a[href^="mailto:"] {
 
 /* Scroll down indicator animation */
 @keyframes bounce {
-  0%, 20%, 53%, 80%, 100% {
+
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
     transform: translate3d(0, 0, 0);
   }
-  40%, 43% {
+
+  40%,
+  43% {
     transform: translate3d(0, -6px, 0);
   }
+
   70% {
     transform: translate3d(0, -3px, 0);
   }
+
   90% {
     transform: translate3d(0, -1px, 0);
   }
@@ -104,6 +114,7 @@ a[href^="mailto:"] {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -114,15 +125,19 @@ a[href^="mailto:"] {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0);
   }
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
@@ -132,6 +147,7 @@ a[href^="mailto:"] {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
@@ -341,18 +357,18 @@ a[href^="mailto:"] {
   .no-print {
     display: none !important;
   }
-  
+
   body {
     font-size: 12pt;
     line-height: 1.4;
   }
-  
+
   .container {
     max-width: none;
     margin: 0;
     padding: 0;
   }
-  
+
   .font-dancing {
     font-family: serif;
   }
@@ -360,6 +376,7 @@ a[href^="mailto:"] {
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -375,11 +392,11 @@ a[href^="mailto:"] {
   .bg-gradient-to-br {
     background: white !important;
   }
-  
+
   .text-slate-600 {
     color: #000 !important;
   }
-  
+
   .border-slate-200 {
     border-color: #000 !important;
   }
