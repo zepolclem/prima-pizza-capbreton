@@ -1,19 +1,20 @@
 ---
 // Données du header
-const title = "Prima Pizza Capbreton";
-const address = "77 Av. Georges Pompidou, 40130 Capbreton";
+const address_first_line = "77 Av. Georges Pompidou";
+const address_second_line = "40130 Capbreton";
 const hours = "18h30 - 22h";
 const closedDay = "Fermé le lundi";
 const phone = "05 58 74 94 95";
 const phoneHref = "tel:+33558749495";
 ---
 
-<header class="fixed top-0 left-0 w-full backdrop-blur-sm z-50" role="banner">
+<header class="fixed top-0 left-0 w-full backdrop-blur-xl z-50" role="banner">
   <div class="container mx-auto px-4 max-w-5xl">
     <div class="py-3 border-b border-gray-200">
       <!-- Layout responsive unifié -->
-      <div class="flex items-center justify-between md:grid md:grid-cols-3 md:items-center md:gap-4">
-        
+      <div
+        class="flex items-center justify-between md:grid md:grid-cols-3 md:items-center md:gap-4"
+      >
         <!-- Colonne 1: Titre + Adresse (mobile) / Adresse seule (desktop) -->
         <div class="flex flex-col md:order-1">
           <!-- Version mobile -->
@@ -23,35 +24,50 @@ const phoneHref = "tel:+33558749495";
               <span class="text-gray-800"> Pizza </span>
               <span class="text-green-700">Capbreton</span>
             </h1>
-            <p class="text-xs text-gray-600 mt-1">{address}</p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd515b624b11ccdb:0x6b9a84c2aa784331?sa=X&ved=1t:8290&ictx=111s"
+              class="text-xs text-gray-600 mt-1"
+              >{address_first_line}<span class="hidden md:inline"
+                >, {address_second_line}</span
+              ></a
+            >
           </div>
           <!-- Version desktop - Adresse seule -->
           <div class="hidden md:block">
-            <p class="text-xs text-gray-600">77 Av. Georges Pompidou</p>
-            <p class="text-xs text-gray-600">40130 Capbreton</p>
+            <p class="text-xs text-gray-600">{address_first_line}</p>
+            <p class="text-xs text-gray-600">{address_second_line}</p>
           </div>
         </div>
 
         <!-- Colonne 2: Titre centré (desktop uniquement) -->
         <div class="hidden md:flex md:justify-center md:order-2">
-          <h1 class="text-xl font-bold text-gray-800 font-panpizza text-center">{title}</h1>
+          <h1 class="text-2xl font-bold text-gray-800 font-panpizza text-center">
+            <span class="text-red-600">Prima</span>
+            <span class="text-gray-800"> Pizza </span>
+            <span class="text-green-700">Capbreton</span>
+          </h1>
         </div>
 
         <!-- Colonne 3: Contact info -->
         <div class="md:order-3">
-          <div class="flex flex-col items-end text-right text-xs text-gray-600">
-            <div>{hours}</div>
-            <div>{closedDay}</div>
-            <a
-              href={phoneHref}
-              class="underline hover:text-[#C0392B] transition-colors"
-              aria-label="Appeler Prima Pizza"
-            >
-              {phone}
-            </a>
+          <div class="flex flex-col items-end text-right text-sm text-gray-800">
+            <div>
+              <div>{hours}</div>
+              <div>{closedDay}</div>
+            </div>
+            <div class="mt-6 md:mt-3">
+              <a
+                href={phoneHref}
+                class="underline hover:text-[#C0392B] transition-colors font-bold"
+                aria-label="Appeler Prima Pizza"
+              >
+                {phone}
+              </a>
+            </div>
           </div>
         </div>
-        
       </div>
     </div>
   </div>
