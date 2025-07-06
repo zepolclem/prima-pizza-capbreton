@@ -3,7 +3,7 @@ import pizzas from "../data/pizzas";
 export default () => {
     const PizzaCard = ({ pizza, index }) => (
         <div
-            className="bg-white p-0 sm:p-4 sm:h-48 flex flex-col border-b-2 border-slate-100 "
+            className="bg-white p-0 sm:p-4 sm:h-48 flex flex-col border-b-1 md:border-1 border-slate-200 "
             role="article"
             aria-labelledby={`pizza-${index}`}
         >
@@ -13,11 +13,11 @@ export default () => {
                     <div>
                         <h3
                             id={`pizza-${index}`}
-                            className="font-bold text-base text-slate-800 bg-yellow-200 bg-opacity-80 px-2 py-0 rounded-md inline-block mb-2"
+                            className={`font-bold text-base text-slate-800 ${pizza.type !== "originale" ? "bg-yellow-200 bg-opacity-80" : "bg-red-200 bg-opacity-80"} px-2 py-0 rounded-md inline-block`}
                         >
                             {pizza.name}
                         </h3>
-                        <p className="text-xs sm:text-sm px-1 text-slate-600 leading-relaxed">
+                        <p className="text-xs sm:text-sm px-1 text-slate-600 leading-relaxed my-2">
                             {pizza.recipe}
                         </p>
                     </div>
@@ -43,7 +43,7 @@ export default () => {
 
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
-                    {pizzas.sort((a, b) => a.price - b.price).map((pizza, index) => (
+                    {pizzas.sort((a, b) => a.type === "originale" ? 1 : -1).map((pizza, index) => (
                         <PizzaCard key={index} pizza={pizza} index={index} />
                     ))}
                 </div>
