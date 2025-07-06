@@ -3,7 +3,7 @@ import pizzas from "../data/pizzas";
 export default () => {
     const PizzaCard = ({ pizza, index }) => (
         <div 
-            className="bg-white p-1 sm:p-4 sm:h-48 flex flex-col border-b-2 border-slate-200"
+            className="bg-white p-0 sm:p-4 sm:h-48 flex flex-col border-b-2 border-slate-100 rounded-lg"
             role="article"
             aria-labelledby={`pizza-${index}`}
         >
@@ -13,17 +13,17 @@ export default () => {
                     <div>
                         <h3 
                             id={`pizza-${index}`}
-                            className="font-bold text-base text-slate-800 bg-yellow-200 bg-opacity-80 px-2 py-1 rounded-md inline-block mb-2"
+                            className="font-bold text-base text-slate-800 bg-yellow-200 bg-opacity-80 ml-1 mt-1 px-2 py-0 rounded-md inline-block mb-2"
                         >
                             {pizza.name}
                         </h3>
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        <p className="text-xs sm:text-sm px-1 text-slate-600 leading-relaxed">
                             {pizza.recipe}
                         </p>
                     </div>
                 </div>
                 
-                <div className="flex flex-col justify-center items-end text-right">
+                <div className="flex flex-col justify-center items-end text-right px-1">
                     <div className="flex flex-col items-end">
                         <span className="text-lg sm:text-xl font-bold text-green-600 font-mono">
                             {pizza.price}€
@@ -43,7 +43,7 @@ export default () => {
                 <div className="text-center mb-8">
                     <h2 
                         id="menu-title"
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 mb-2"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 mb-2 font-panpizza"
                     >
                         Nos Pizzas
                     </h2>
