@@ -11,11 +11,11 @@ const image = "/android-chrome-512x512.png";
 
 <Layout title={title} description={description} image={image} canonical="/">
   <!-- Hero Section -->
-  <section class="relative mb-8 py-8 sm:py-12">
+  <section class="relative py-2 sm:py-12">
     <div class="container mx-auto px-4">
       <div class="text-center">
         <h1
-          class="text-2xl sm:text-3xl md:text-4xl font-bold font-dancing text-red-600 mb-4"
+          class="text-2xl sm:text-3xl md:text-4xl font-bold text-red-600 mb-4"
         >
           Benvenuto à la Prima Pizza !
         </h1>
@@ -23,30 +23,20 @@ const image = "/android-chrome-512x512.png";
         <p
           class="text-base sm:text-lg text-slate-700 max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          La pizzeria artisanale à <strong>Capbreton</strong> et <strong
-            >Hossegor</strong
-          >. Découvrez nos pizzas savoureuses préparées avec soin par nos chefs
-          passionnés.
+          La pizzeria artisanale à <strong>Capbreton</strong>. Découvrez nos
+          pizzas savoureuses préparées avec soin par nos chefs passionnés.
         </p>
-
-        <!-- Bouton scroll vers la carte -->
-        <a
-          href="#menu-title"
-          class="btn-touch inline-flex items-center justify-center px-8 py-4 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-lg"
-          aria-label="Voir notre carte des pizzas"
-        >
-          <span class="mr-2" aria-hidden="true">🍕</span>
-          Voir notre carte
-          <span class="ml-2 animate-bounce" aria-hidden="true">↓</span>
-        </a>
       </div>
     </div>
   </section>
 
+  <!-- Menu Section -->
+  <Menu />
+
   <!-- About Section -->
   <section class="mb-8" aria-labelledby="about-title">
     <div class="container mx-auto px-4">
-      <div class="bg-white rounded-lg shadow-sm p-6 sm:p-8">
+      <div class="bg-white rounded-lg">
         <h2 id="about-title" class="sr-only">À propos de Prima Pizza</h2>
 
         <div
@@ -83,9 +73,6 @@ const image = "/android-chrome-512x512.png";
       </div>
     </div>
   </section>
-
-  <!-- Menu Section -->
-  <Menu />
 
   <!-- Footer Navigation -->
   <footer class="mt-8 pt-6 border-t border-slate-200">

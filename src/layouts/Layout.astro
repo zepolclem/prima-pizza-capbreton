@@ -9,10 +9,17 @@ interface Props {
   canonical?: string;
 }
 
-const { title, description = "Pizzeria Prima Pizza à Capbreton et Hossegor. Pizzas artisanales à emporter et livraison. Ingrédients frais, recettes authentiques.", image = "/android-chrome-512x512.png", canonical } = Astro.props;
+const {
+  title,
+  description = "Pizzeria Prima Pizza à Capbreton et Hossegor. Pizzas artisanales à emporter et livraison. Ingrédients frais, recettes authentiques.",
+  image = "/android-chrome-512x512.png",
+  canonical,
+} = Astro.props;
 
 const siteUrl = "https://prima-pizza-capbreton.fr";
-const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.url.pathname}`;
+const canonicalUrl = canonical
+  ? `${siteUrl}${canonical}`
+  : `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -22,12 +29,15 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <meta name="description" content={description} />
-    <meta name="keywords" content="pizza, Capbreton, Hossegor, livraison, à emporter, pizzeria, artisanale, ingrédients frais, Prima Pizza" />
+    <meta
+      name="keywords"
+      content="pizza, Capbreton, Hossegor, livraison, à emporter, pizzeria, artisanale, ingrédients frais, Prima Pizza"
+    />
     <meta name="author" content="Prima Pizza Capbreton" />
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prima Pizza Capbreton" />
@@ -36,35 +46,35 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
     <meta property="og:image" content={`${siteUrl}${image}`} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content="fr_FR" />
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${siteUrl}${image}`} />
-    
+
     <!-- Preconnect for performance -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <link rel="preconnect" href="https://plausible.zepolclem.dev" />
-    
+
     <!-- Google Fonts -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet" /> -->
-    
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    
+
     <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Analytics -->
     <script
       defer
       data-domain="prima-pizza-capbreton.fr"
       src="https://plausible.zepolclem.dev/js/script.js"></script>
-    
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
       {
@@ -87,9 +97,7 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
           "latitude": "43.6394",
           "longitude": "-1.4294"
         },
-        "openingHours": [
-          "Tu-Su 18:30-22:00"
-        ],
+        "openingHours": ["Tu-Su 18:30-22:00"],
         "servesCuisine": "Pizza",
         "priceRange": "€€",
         "image": "https://prima-pizza-capbreton.fr/android-chrome-512x512.png",
@@ -101,12 +109,12 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
         }
       }
     </script>
-    
+
     <title>{title}</title>
   </head>
   <body class="bg-white">
     <Header />
-    <main class="container mx-auto px-4 py-6 max-w-5xl">
+    <main class="container mx-auto px-4 py-6 max-w-5xl pt-28">
       <slot />
     </main>
   </body>
