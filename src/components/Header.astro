@@ -8,9 +8,11 @@ const phone = "05 58 74 94 95";
 const phoneHref = "tel:+33558749495";
 ---
 
-<header class="fixed top-0 left-0 w-full backdrop-blur-xl z-50" role="banner">
-  <div class="container mx-auto px-4 max-w-5xl border-b border-gray-200">
-    <div class="py-3 ">
+<header class="fixed top-0 left-0 w-full z-50" role="banner">
+  <div
+    class="container mx-auto px-4 max-w-5xl border border-gray-200 backdrop-blur-xl bg-white/80"
+  >
+    <div class="py-3">
       <!-- Layout responsive unifié -->
       <div
         class="flex items-center justify-between md:grid md:grid-cols-3 md:items-center md:gap-4"
@@ -24,26 +26,24 @@ const phoneHref = "tel:+33558749495";
               <span class="text-gray-800"> Pizza </span>
               <span class="text-green-600">Capbreton</span>
             </h1>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd515b624b11ccdb:0x6b9a84c2aa784331?sa=X&ved=1t:8290&ictx=111s"
-              class="text-xs text-gray-600 mt-1"
+            <a href="#map" class="text-xs text-gray-600 mt-1"
               >{address_first_line}<span class="hidden md:inline"
                 >, {address_second_line}</span
               ></a
             >
           </div>
           <!-- Version desktop - Adresse seule -->
-          <div class="hidden md:block">
+          <a href="#map" class="hidden md:block">
             <p class="text-xs text-gray-600">{address_first_line}</p>
             <p class="text-xs text-gray-600">{address_second_line}</p>
-          </div>
+          </a>
         </div>
 
         <!-- Colonne 2: Titre centré (desktop uniquement) -->
         <div class="hidden md:flex md:justify-center md:order-2">
-          <h1 class="text-2xl font-bold text-gray-800 font-panpizza text-center">
+          <h1
+            class="text-2xl font-bold text-gray-800 font-panpizza text-center"
+          >
             <span class="text-red-600">Prima</span>
             <span class="text-gray-800"> Pizza </span>
             <span class="text-green-600">Capbreton</span>
@@ -53,8 +53,8 @@ const phoneHref = "tel:+33558749495";
         <!-- Colonne 3: Contact info -->
         <div class="md:order-3">
           <div class="flex flex-col items-end text-right text-xs text-gray-800">
-              <div>{hours}</div>
-              <div>{closedDay}</div>
+            <div>{hours}</div>
+            <div>{closedDay}</div>
             <div class="mt-6 md:mt-3">
               <a
                 href={phoneHref}

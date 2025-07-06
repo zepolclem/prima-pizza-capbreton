@@ -3,7 +3,7 @@ import pizzas from "../data/pizzas";
 export default () => {
     const PizzaCard = ({ pizza, index }) => (
         <div
-            className="bg-white p-0 sm:p-4 sm:h-48 flex flex-col border-b-1 md:border-1 border-slate-200 "
+            className="bg-white p-0 sm:p-4 sm:h-48 flex flex-col border-b-1 border-slate-200 "
             role="article"
             aria-labelledby={`pizza-${index}`}
         >
@@ -13,7 +13,7 @@ export default () => {
                     <div>
                         <h3
                             id={`pizza-${index}`}
-                            className={`font-bold text-base text-slate-800 ${pizza.type !== "originale" ? "bg-yellow-200 bg-opacity-80" : "bg-red-200 bg-opacity-80"} px-2 py-0 rounded-md inline-block`}
+                            className={`font-bold text-base text-slate-800 ${pizza.type !== "originale" ? "bg-yellow-300 bg-opacity-80" : "bg-red-300 bg-opacity-80"} px-2 py-0 inline-block rounded-md`}
                         >
                             {pizza.name}
                         </h3>
@@ -42,7 +42,7 @@ export default () => {
             <div className="container mx-auto">
 
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8">
                     {pizzas.sort((a, b) => a.type === "originale" ? 1 : -1).map((pizza, index) => (
                         <PizzaCard key={index} pizza={pizza} index={index} />
                     ))}

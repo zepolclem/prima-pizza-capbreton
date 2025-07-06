@@ -1,5 +1,7 @@
 ---
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -40,11 +42,37 @@ const canonicalUrl = canonical
 
     <!-- DNS Prefetch pour les domaines externes -->
     <link rel="dns-prefetch" href="https://plausible.zepolclem.dev" />
-    
+
     <!-- Préchargement des polices critiques optimisées -->
-    <link rel="preload" href="/fonts/panpizza.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="/fonts/Pizza.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    
+    <link
+      rel="preload"
+      href="/fonts/panpizza.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/Pizza.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <!-- Préchargement des images d'arrière-plan -->
+    <link
+      rel="preload"
+      href="/pizza-background.jpg"
+      as="image"
+      type="image/jpeg"
+    />
+    <link
+      rel="preload"
+      href="/pizza-hero-background.jpg"
+      as="image"
+      type="image/jpeg"
+    />
+
     <!-- Préconnexion pour analytics -->
     <link rel="preconnect" href="https://plausible.zepolclem.dev" />
 
@@ -114,10 +142,26 @@ const canonicalUrl = canonical
 
     <title>{title}</title>
   </head>
-  <body class="bg-slate-100">
+  <body class="bg-slate-100 relative">
+    <!-- Arrière-plan flou avec image pizza -->
+    <div class="fixed inset-0 -z-10">
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('/pizza-background.jpg'); filter: blur(8px); transform: scale(1.1);"
+      >
+      </div>
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+
     <Header />
-    <main class="container mx-auto px-4 py-6 max-w-5xl pt-28 bg-white">
+
+    <Hero />
+
+    <main
+      class="container mx-auto px-4 py-6 max-w-5xl bg-white md:bg-slate-50 backdrop-blur-sm border-x border-slate-200"
+    >
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
